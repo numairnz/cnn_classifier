@@ -18,7 +18,8 @@ list_of_files = [
 	'dvc.yaml',
 	'requirements.txt',
 	'setup.py',
-	'research/traits.ipynb'
+	'research/traits.ipynb',
+	'templates/index.html'
 
 ]
 for filepath in list_of_files:

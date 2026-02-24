@@ -1,6 +1,7 @@
 from cnn_classifier import logger
 from cnn_classifier.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from cnn_classifier.pipeline.stage_02_prepare_basemodel import PrepareModel
+from cnn_classifier.pipeline.stage_03_prepare_callbacks import PrepareCallbacks
 STAGE_NAME = 'Data Ingestion Stage'
 logger.info(f"{'>>'*20}{STAGE_NAME} {'<<'*20}")
 
@@ -25,4 +26,12 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
-
+STAGE_NAME = 'Prepare Callbacks Stage'
+logger.info(f"{'>>'*20}{STAGE_NAME} {'<<'*20}")
+try:
+    logger.info(f"{'>>'*20}{STAGE_NAME} Started {'<<'*20}")
+    prepare_callbacks = PrepareCallbacks()
+    prepare_callbacks.main()
+    logger.info(f"{'>>'*20}{STAGE_NAME} Completed {'<<'*20}\n\n x=================x")
+except Exception as e:
+    raise e
